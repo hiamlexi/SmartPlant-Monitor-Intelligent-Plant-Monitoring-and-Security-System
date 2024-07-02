@@ -24,6 +24,61 @@ In this updated version:
 
 
 
+## 11. Finalizing the design
+> 
+>  ### [Click here ](https://drive.google.com/drive/folders/1pgtQ7hYxhgqS6kMPK1Miy1mM-PNRt0vt?usp=sharing)to see the use case of the project with different scenarios. 
+
+
+#### Scenario 1:
+* User turns on the security function.
+* Machine starts monitoring.
+* An unauthorized object approaches the plant within 5cm.
+* Buzzer turns on, alerting the user.
+* Object backs off beyond 5cm.
+* Buzzer turns off.
+* 24-light LED ring now lights up according to the distance from the ultrasonic sensor.
+
+
+#### Scenario 2:
+* An unauthorized object approaches the plant within 5cm.
+* Buzzer turns on, alerting the user.
+* User scanned an authorized card.
+* Buzzer turns off.
+
+#### Scenario 3:
+
+* User turns on the security function.
+* Machine starts monitoring.
+* An unauthorized object approaches the plant within 5cm.
+* Buzzer turns on, alerting the user.
+* An phone call AND sms to user to alert them with message like "Hi,
+This is SmartPlant Monitor. Something is tryng to approach your precious plant at 2024-07-02 13:35:30 +0200. The distance is 14.00."
+
+#### Scenario 4 & 7:
+
+* Show case button to switch between light according to real time data and decorative light
+
+#### Scenario 5:
+
+* An unauthorized object approaches the plant within 5cm.
+* Buzzer turns on, alerting the user.
+* An unauthorized card is scanned, the buzzer continue to alert user. Red leds to indicated that the access is denied (in the video, the red led is broken).
+* An authirized card (with black dot in the video) is scanned, the buzzer goes off, the green led blinks to indicate that the access is allowed.
+
+#### Scenario 6:
+
+* Show case button to manually turn on and off for the security function. (Using interrupt).
+
+## 8. Data Transmission and Visualization
+
+The SmartPlant Monitor project get suppoirted from my python program  for data transmission and ubidots for data visualization and user interface. The workflow is as follows:
+
+* The arduino and sensors collect sensor data.
+* The python program helps the data transmission from the MCU to a local PC via the COM port and the script then reads, processes, and formats the data for transfer into the cloud. The only requirement is internet connectivity on the PC. This Python script has been developed and tested on the Windows platform.
+* The Ubidots dashboard displays real-time sensor readings.
+
+
+![image](https://hackmd.io/_uploads/ryO6-eC8C.png)
 
 ## 2. Estimated time
 To assemble the device and upload the code should take you around 4 hours.
@@ -108,7 +163,7 @@ Click the Verify ![symbol_verify2](https://hackmd.io/_uploads/SkUObATLC.png)butt
     * Click the Upload![symbol_upload2](https://hackmd.io/_uploads/Sk7tZR6IC.png)button Upload button to program the board with the sketch.
     * Your sketch will start running on the board. It will run again each time the board is reset.
     4. Step 4:Set up Ubidots as this [tutorial](https://help.ubidots.com/en/articles/2226697-creating-devices-in-ubidots) 
-    5. Step 5: Run the Python program on   VS code studio
+    5. Step 5: Run the Python program on VS code studio
 
 ## 7. Putting everything together
 
@@ -116,16 +171,6 @@ You can arrange the components as desired, but make sure to connect everything c
 
 ![image](https://hackmd.io/_uploads/HkZ1A1R8A.png)
 
-## 8. Data Transmission and Visualization
-
-The SmartPlant Monitor project get suppoirted from my python program  for data transmission and ubidots for data visualization and user interface. The workflow is as follows:
-
-* The arduino and sensors collect sensor data.
-* The python program helps the data transmission from the MCU to a local PC via the COM port and the script then reads, processes, and formats the data for transfer into the cloud. The only requirement is internet connectivity on the PC. This Python script has been developed and tested on the Windows platform.
-* The Ubidots dashboard displays real-time sensor readings.
-
-
-![image](https://hackmd.io/_uploads/ryO6-eC8C.png)
 
 ## 9. Code
 
@@ -158,51 +203,6 @@ Then open the sketch, go to header RFID. Paste the UID of the card here.
 * The data is sent every minute.
 * Which wireless protocols did you use? Wi-fi, Cellular 
 * Which transport protocols were used? TCP (Transmission Control Protocol)
-
-## 11. Finalizing the design
-> 
->  ### [Click here ](https://drive.google.com/drive/folders/1pgtQ7hYxhgqS6kMPK1Miy1mM-PNRt0vt?usp=sharing)to see the use case of the project with different scenarios. 
-
-
-#### Scenario 1:
-* User turns on the security function.
-* Machine starts monitoring.
-* An unauthorized object approaches the plant within 5cm.
-* Buzzer turns on, alerting the user.
-* Object backs off beyond 5cm.
-* Buzzer turns off.
-* 24-light LED ring now lights up according to the distance from the ultrasonic sensor.
-
-
-#### Scenario 2:
-* An unauthorized object approaches the plant within 5cm.
-* Buzzer turns on, alerting the user.
-* User scanned an authorized card.
-* Buzzer turns off.
-
-#### Scenario 3:
-
-* User turns on the security function.
-* Machine starts monitoring.
-* An unauthorized object approaches the plant within 5cm.
-* Buzzer turns on, alerting the user.
-* An phone call AND sms to user to alert them with message like "Hi,
-This is SmartPlant Monitor. Something is tryng to approach your precious plant at 2024-07-02 13:35:30 +0200. The distance is 14.00."
-
-#### Scenario 4 & 7:
-
-* Show case button to switch between light according to real time data and decorative light
-
-#### Scenario 5:
-
-* An unauthorized object approaches the plant within 5cm.
-* Buzzer turns on, alerting the user.
-* An unauthorized card is scanned, the buzzer continue to alert user. Red leds to indicated that the access is denied (in the video, the red led is broken).
-* An authirized card (with black dot in the video) is scanned, the buzzer goes off, the green led blinks to indicate that the access is allowed.
-
-#### Scenario 6:
-
-* Show case button to manually turn on and off for the security function. (Using interrupt).
 
 
 
